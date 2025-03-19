@@ -1,0 +1,201 @@
+:root {
+    --primary-color: #1a365d; /* Biru tua */
+    --secondary-color: #ffffff; /* Putih */
+    --hover-color: #63b3ed; /* Biru muda */
+    --background-gradient: linear-gradient(135deg, #1a365d, #0a2342); /* Gradien latar belakang */
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background-gradient);
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.coming-soon-container {
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1.5rem;
+    animation: zoomIn 1.5s ease-in-out;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    animation: slideIn 1s ease-in-out;
+}
+
+p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    animation: slideIn 1.2s ease-in-out;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.countdown-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 100px;
+    transition: all 0.3s ease;
+}
+
+.countdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.countdown-item span {
+    display: block;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.countdown-item small {
+    font-size: 0.9rem;
+    color: var(--hover-color);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.social-icon {
+    color: var(--secondary-color);
+    font-size: 1.75rem;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--hover-color);
+    transform: scale(1.2) rotate(15deg);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .countdown {
+        gap: 1rem;
+    }
+
+    .countdown-item {
+        width: 80px;
+        padding: 0.75rem;
+    }
+
+    .countdown-item span {
+        font-size: 1.5rem;
+    }
+
+    .countdown-item small {
+        font-size: 0.8rem;
+    }
+
+    .social-icons {
+        gap: 1rem;
+    }
+
+    .social-icon {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .countdown {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .countdown-item {
+        width: 100%;
+        max-width: 200px;
+    }
+}
